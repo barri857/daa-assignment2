@@ -27,7 +27,7 @@ public class MyLinkedList {
     }
 
     public void add(int index, int x) {
-        if (index < 0 || index > size) throw new IndexOutOfBoundsException(); //[cite: 2]
+        if (index < 0 || index > size) throw new IndexOutOfBoundsException();
         if (index == 0) {
             Node newNode = new Node(x);
             newNode.next = head;
@@ -49,7 +49,7 @@ public class MyLinkedList {
     }
 
     public void remove(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException(); //[cite: 2]
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
         if (index == 0) {
             head = head.next;
             moves++;
@@ -67,7 +67,7 @@ public class MyLinkedList {
     }
 
     public int get(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException(); //[cite: 2]
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
         Node curr = head;
         steps++;
         for (int i = 0; i < index; i++) {

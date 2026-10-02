@@ -17,7 +17,7 @@ public class DynamicArray {
     }
 
     public void add(int index, int x) {
-        if (index < 0 || index > size) throw new IndexOutOfBoundsException(); //[cite: 2]
+        if (index < 0 || index > size) throw new IndexOutOfBoundsException();
         if (size == data.length) resize();
         for (int i = size; i > index; i--) {
             data[i] = data[i - 1];
@@ -30,7 +30,7 @@ public class DynamicArray {
     }
 
     public void remove(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException(); //[cite: 2]
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
             moves++;
@@ -40,7 +40,7 @@ public class DynamicArray {
     }
 
     public int get(int index) {
-        if (index < 0 || index >= size) throw new IndexOutOfBoundsException(); //[cite: 2]
+        if (index < 0 || index >= size) throw new IndexOutOfBoundsException();
         steps++;
         return data[index];
     }
@@ -55,7 +55,7 @@ public class DynamicArray {
     }
 
     private void resize() {
-        int[] newData = new int[data.length * 2]; //[cite: 2]
+        int[] newData = new int[data.length * 2];
         for (int i = 0; i < size; i++) {
             newData[i] = data[i];
             moves++;

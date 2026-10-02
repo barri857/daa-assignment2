@@ -14,24 +14,24 @@ public class MinHeap {
         if (size == data.length) resize();
         data[size] = x;
         moves++;
-        bubbleUp(size); //[cite: 2]
+        bubbleUp(size);
         size++;
     }
 
     public int peekMin() {
-        if (size == 0) throw new IllegalStateException(); //[cite: 2]
+        if (size == 0) throw new IllegalStateException();
         steps++;
         return data[0];
     }
 
     public int extractMin() {
-        if (size == 0) throw new IllegalStateException(); //[cite: 2]
+        if (size == 0) throw new IllegalStateException();
         int min = data[0];
         steps++;
         data[0] = data[size - 1];
         moves++;
         size--;
-        bubbleDown(0); //[cite: 2]
+        bubbleDown(0);
         return min;
     }
 
@@ -90,7 +90,7 @@ public class MinHeap {
         data = newData;
     }
 
-    // Bonus Task B: O(n) buildHeap[cite: 4]
+
     public void buildHeap(int[] array) {
         this.data = array;
         this.size = array.length;

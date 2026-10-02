@@ -36,7 +36,6 @@ public class DataStructuresTest {
         heap.insert(10);
         heap.insert(30);
 
-        // Assert Heap Property a[parent] <= a[child] manually
         assertTrue(heap.data[0] <= heap.data[1]);
         assertTrue(heap.data[0] <= heap.data[2]);
 

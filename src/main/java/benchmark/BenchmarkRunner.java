@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class BenchmarkRunner {
-    private static final int[] SIZES = {100, 1000, 10000, 100000}; //[cite: 2]
+    private static final int[] SIZES = {100, 1000, 10000, 100000};
     private static FileWriter csvWriter;
 
     public static void main(String[] args) throws IOException {
@@ -25,18 +25,18 @@ public class BenchmarkRunner {
             runWorkload2(n);
             runWorkload3(n);
             runWorkload4(n);
-            runMemoryFootprint(n); // Bonus Task A[cite: 4]
+            runMemoryFootprint(n);
         }
         csvWriter.close();
         System.out.println("Benchmark complete. Results saved to results/results.csv");
     }
 
     private static void runWorkload1(int n) throws IOException {
-        Random rand = new Random(42); //[cite: 2]
+        Random rand = new Random(42);
         long[] timesArr = new long[5], timesList = new long[5];
         long stepsA = 0, movesA = 0, compA = 0, stepsL = 0, movesL = 0, compL = 0;
 
-        for (int run = 0; run < 6; run++) { //[cite: 3]
+        for (int run = 0; run < 6; run++) {
             DynamicArray arr = new DynamicArray();
             MyLinkedList list = new MyLinkedList();
             for (int i = 0; i < n; i++) { int v = rand.nextInt(); arr.add(v); list.add(v); }
@@ -76,8 +76,8 @@ public class BenchmarkRunner {
             for (int i = 0; i < n; i++) { data[i] = rand.nextInt(); arr.add(data[i]); list.add(data[i]); }
 
             int[] queries = new int[1000];
-            for (int i = 0; i < 500; i++) queries[i] = data[rand.nextInt(n)]; // Half present[cite: 2]
-            for (int i = 500; i < 1000; i++) queries[i] = rand.nextInt(); // Half absent
+            for (int i = 0; i < 500; i++) queries[i] = data[rand.nextInt(n)];
+            for (int i = 500; i < 1000; i++) queries[i] = rand.nextInt();
 
             arr.resetMetrics(); list.resetMetrics();
 
@@ -101,8 +101,8 @@ public class BenchmarkRunner {
     }
 
     private static void runWorkload3(int n) throws IOException {
-        runW3Variant(n, "head", 0); //[cite: 2]
-        runW3Variant(n, "middle", n / 2); //[cite: 2]
+        runW3Variant(n, "head", 0);
+        runW3Variant(n, "middle", n / 2);
     }
 
     private static void runW3Variant(int n, String variant, int baseIndex) throws IOException {
